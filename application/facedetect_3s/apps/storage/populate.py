@@ -34,6 +34,7 @@ for f in old_files:
 
 # Copy new files
 for i in img_nbr:
+    print(i)
     copy(random.choice(images_binned[i]), storagepath)
 
 
