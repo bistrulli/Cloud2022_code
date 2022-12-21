@@ -47,7 +47,7 @@ spec:
               - facedetect
       containers:
       - name:  storage
-        image: registry.gitlab.com/PATH_TO_REGISTRY/storage:latest
+        image: docker.io/bistrulli/storage:latest
         imagePullPolicy: Always
         ports:
           - name: http

@@ -48,7 +48,7 @@ spec:
               - facedetect
       containers:
       - name:  frontend
-        image: registry.gitlab.com/PATH_TO_REGISTRY/frontend:latest
+        image: docker.io/bistrulli/frontend:latest
         imagePullPolicy: Always
         ports:
           - name: http
