@@ -4,16 +4,16 @@ import time
 
 # Settings
 FRONTEND_NAME = "frontend"
-FRONTEND_CLUSTERS = ["cluster-1"]
+FRONTEND_CLUSTERS = ["minikube"]
 
 BACKEND_V1_NAME = "backend-v1"
-BACKEND_V1_CLUSTERS = ["cluster-1"]
+BACKEND_V1_CLUSTERS = ["minikube"]
 
 BACKEND_V2_NAME = "backend-v2"
-BACKEND_V2_CLUSTERS = ["cluster-2"]
+BACKEND_V2_CLUSTERS = ["minikube"]
 
 STORAGE_NAME = "storage"
-STORAGE_CLUSTERS = ["cluster-1"]
+STORAGE_CLUSTERS = ["minikube"]
 
 ROOT = "/home/ubuntu/run_on_gateway/clusters/"
 
@@ -113,7 +113,8 @@ def launch_nginx():
 
 if __name__ == '__main__':
 
-    clusters = [dir for dir in os.listdir(ROOT) if "cluster-" in dir]
+    #clusters = [dir for dir in os.listdir(ROOT) if "cluster-" in dir]
+    clusters=["minikube"]
     clusters.sort()
 
     deploy(clusters)
