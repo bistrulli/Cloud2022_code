@@ -1,5 +1,7 @@
 FROM python:3.6.8
 
+pip install --upgrade pip setuptools wheel
+
 WORKDIR /app
 COPY . /app
 
