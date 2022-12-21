@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-export GITLAB_REGISTRY=registry.gitlab.com # Insert git container registry, we used gitlab
-export REGPATH= # Path to the registry
+export GITLAB_REGISTRY=hub.docker.com # Insert git container registry, we used gitlab
+export REGPATH=bistrulli # Path to the registry
 
 docker login $GITLAB_REGISTRY
 
