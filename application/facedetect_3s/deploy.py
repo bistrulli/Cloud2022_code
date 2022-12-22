@@ -25,7 +25,7 @@ def deploy(clusters):
                 or (cluster in BACKEND_V2_CLUSTERS)):
             continue
         os.system("kubectl --context={} apply -f src/namespace.yaml".format(cluster))
-        os.system("kubectl --context={} -n facedetect".format(cluster) #create secret generic gitlab-auth".format(cluster) \
+        os.system("kubectl --context={} -n facedetect")#create secret generic gitlab-auth".format(cluster) \
             #+ " --from-file=.dockerconfigjson=%s/.docker/config.json"%(os.path.expanduser("~")) \
             #+ " --type=kubernetes.io/dockerconfigjson")
         os.system("kubectl --context={} apply -f src/backend-v1.yaml -l service=backend-v1".format(cluster))
