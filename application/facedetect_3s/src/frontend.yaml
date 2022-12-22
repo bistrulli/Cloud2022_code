@@ -30,8 +30,8 @@ spec:
       labels:
         app: frontend
     spec:
-      imagePullSecrets:
-        - name: gitlab-auth
+      #imagePullSecrets:
+      #  - name: gitlab-auth
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:

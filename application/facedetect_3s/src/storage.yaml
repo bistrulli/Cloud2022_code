@@ -29,8 +29,8 @@ spec:
       labels:
         app: storage
     spec:
-      imagePullSecrets:
-        - name: gitlab-auth
+      #imagePullSecrets:
+      #  - name: gitlab-auth
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:

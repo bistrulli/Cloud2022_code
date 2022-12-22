@@ -29,8 +29,8 @@ spec:
       labels:
         app: backend-v2
     spec:
-      imagePullSecrets:
-        - name: gitlab-auth
+      #imagePullSecrets:
+      #  - name: gitlab-auth
       containers:
         - name:  backend-v2
           image: docker.io/bistrulli/backend:latest
