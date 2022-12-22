@@ -1,6 +1,7 @@
 import os
 import yaml
 import time
+import os.path
 
 # Settings
 FRONTEND_NAME = "frontend"
@@ -25,7 +26,7 @@ def deploy(clusters):
             continue
         os.system("kubectl --context={} apply -f src/namespace.yaml".format(cluster))
         os.system("kubectl --context={} -n facedetect create secret generic gitlab-auth".format(cluster) \
-            + " --from-file=.dockerconfigjson=/home/ubuntu/.docker/config.json" \
+            + " --from-file=.dockerconfigjson=%s/.docker/config.json"%(os.path.expanduser("~")) \
             + " --type=kubernetes.io/dockerconfigjson")
         os.system("kubectl --context={} apply -f src/backend-v1.yaml -l service=backend-v1".format(cluster))
         os.system("kubectl --context={} apply -f src/backend-v2.yaml -l service=backend-v2".format(cluster))
