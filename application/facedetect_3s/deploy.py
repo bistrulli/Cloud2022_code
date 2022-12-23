@@ -119,8 +119,8 @@ if __name__ == '__main__':
     clusters.sort()
 
     deploy(clusters)
-    deploy_backend()
-    deploy_storage()
-    deploy_frontend()
+    #deploy_backend()
+    #deploy_storage()
+    #deploy_frontend()
     generate_nginxconf(clusters)
     launch_nginx()
