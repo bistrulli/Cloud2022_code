@@ -14,6 +14,9 @@ echo \
   
 sudo apt-get update 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo usermod -aG docker $USER | sh -
+
+#minikunbe install
 sudo apt install -y curl wget apt-transport-https
 wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo cp minikube-linux-amd64 /usr/local/bin/minikube
@@ -23,3 +26,10 @@ chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 
 minikube start --memory=20000 --cpus=4
+
+#istio install
+
+curl -L https://git.io/getLatestIstio | sh -
+cd istio-*
+export PATH=$PWD/bin:$PATH
+istioctl install
