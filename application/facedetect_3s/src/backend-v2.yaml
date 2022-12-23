@@ -33,7 +33,7 @@ spec:
       #  - name: gitlab-auth
       containers:
         - name:  backend-v2
-          image: docker.io/bistrulli/backend:latest
+          image: bistrulli/backend:latest
           imagePullPolicy: Always
           ports:
             - name: http

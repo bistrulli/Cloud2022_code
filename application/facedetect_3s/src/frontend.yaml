@@ -48,7 +48,7 @@ spec:
               - facedetect
       containers:
       - name:  frontend
-        image: docker.io/bistrulli/frontend:latest
+        image: bistrulli/frontend:latest
         imagePullPolicy: Always
         ports:
           - name: http
