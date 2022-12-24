@@ -31,20 +31,20 @@ spec:
     spec:
       #imagePullSecrets:
       #  - name: gitlab-auth
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - backend-v1
-                - backend-v2
-                - frontend
-            topologyKey: "kubernetes.io/hostname"
-            namespaces:
-              - facedetect
+      #affinity:
+      #  podAntiAffinity:
+      #    requiredDuringSchedulingIgnoredDuringExecution:
+      #    - labelSelector:
+      #        matchExpressions:
+      #        - key: app
+      #          operator: In
+      #          values:
+      #          - backend-v1
+      #          - backend-v2
+      #          - frontend
+      #topologyKey: "kubernetes.io/hostname"
+      #     namespaces:
+      #       - facedetect
       containers:
       - name:  storage
         image: bistrulli/storage:latest
