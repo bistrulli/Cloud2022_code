@@ -56,7 +56,7 @@ def retrieve_cluster_IPs(clusters):
     for (i, cluster) in enumerate(clusters):
         
         role="master"
-        if(len(cluster)==1):
+        if(len(clusters)==1):
             role="control-plane"
         
         CMD = "kubectl --context=%s get nodes -o wide | grep %s | awk '{print $6}'" % (cluster,role)
