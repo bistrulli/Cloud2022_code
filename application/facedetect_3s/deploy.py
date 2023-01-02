@@ -54,7 +54,12 @@ def deploy_storage():
 def retrieve_cluster_IPs(clusters):
     ips = {}
     for (i, cluster) in enumerate(clusters):
-        CMD = "kubectl --context=%s get nodes -o wide | grep master | awk '{print $6}'" % cluster
+        
+        role="master"
+        if(len(cluster)==1):
+            role="control-plane"
+        
+        CMD = "kubectl --context=%s get nodes -o wide | grep %s | awk '{print $6}'" % (cluster,role)
         masterip = os.popen(CMD).read().strip()
         ips[cluster] = masterip
     return ips
